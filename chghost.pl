@@ -28,6 +28,7 @@ Irssi::signal_add('event chghost', sub {
     }
     my $q = $server->query_find($nick);
     $q->printformat(MSGLEVEL_NICKS, 'chghost', $nick, $oldhost, $newhost) if defined $q;
+    Irssi::signal_stop();
 });
     
 
